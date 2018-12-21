@@ -16,7 +16,7 @@ class DropDownList extends React.Component {
   }
   render() {
     const optionList  = ['Move to...','Currently Reading','Want to Read','Read','None']
-    return renderDropDownList(optionList)
+    return this.renderDropDownList(optionList)
   }
 }
 
