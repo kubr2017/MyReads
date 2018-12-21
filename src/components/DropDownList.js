@@ -3,7 +3,7 @@ import React from 'react'
 class DropDownList extends React.Component {
   renderDropDownList = () => {
     const { dropDownDownData } = this.props;
-    return {
+    return (
       <div className="book-shelf-changer">
         <select>
           dropDownDownData.map(function(item){
@@ -11,7 +11,7 @@ class DropDownList extends React.Component {
           })
         </select>
       </div>
-    }
+    )
 
   }
   render() {
