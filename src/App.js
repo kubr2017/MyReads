@@ -3,6 +3,7 @@ import React from 'react'
 import './App.css'
 
 class BooksApp extends React.Component {
+  const optionList = ['Move to...','Currently Reading','Want to Read','Read','None']
   state = {
     /**
      * TODO: Instead of using this state variable to keep track of which page
