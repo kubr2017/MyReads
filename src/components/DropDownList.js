@@ -13,6 +13,11 @@ class DropDownList extends React.Component {
       </div>
     }
 
+  }
+  render() {
+    const optionList  = ['Move to...','Currently Reading','Want to Read','Read','None']
+    return renderDropDownList(optionList)
+  }
 }
 
 export  DropDownList
