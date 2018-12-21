@@ -20,4 +20,4 @@ class DropDownList extends React.Component {
   }
 }
 
-export  DropDownList
+export  { DropDownList }
