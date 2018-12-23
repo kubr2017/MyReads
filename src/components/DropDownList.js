@@ -2,14 +2,12 @@ import React from 'react'
 
 class DropDownList extends React.Component {
   renderDropDownList = () => {
-    const { dropDownDownData } = this.props
+    const  dropDownDownData  = this.props
     return (
       <div className="book-shelf-changer">
-        <select>
-          dropDownDownData.map(function(item){
-            <option key = {item} value={item}>{item}</option>
-          })
-        </select>
+      <select>
+   {dropDownDownData.map(item => (<option key = {item} value={item}>{item}</option>))}
+ </select>
       </div>
     )
 
