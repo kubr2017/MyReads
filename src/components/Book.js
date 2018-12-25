@@ -1,7 +1,10 @@
 import React from 'react'
 import { DropDownList } from './DropDownList'
 
+
 class Book extends React.Component {
+  // const res = {};
+
   render() {
     return (
       <div className="book">
@@ -12,6 +15,8 @@ class Book extends React.Component {
         <div className="book-title">The Hobbit</div>
         <div className="book-authors">J.R.R. Tolkien</div>
       </div>
+      //console.log(BooksAPI.getAll());
+      BooksAPI.getAll().then(function(res){return res});
     )
   }
 }
