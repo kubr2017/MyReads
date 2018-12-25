@@ -72,6 +72,9 @@ class BooksApp extends React.Component {
                           <div className="book-authors">Orson Scott Card</div>
                         </div>
                       </li>
+                      <li>
+                        <Book/>
+                      </li>
                     </ol>
                   </div>
                 </div>
