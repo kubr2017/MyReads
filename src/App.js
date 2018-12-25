@@ -2,6 +2,7 @@ import React from 'react'
 // import * as BooksAPI from './BooksAPI'
 import './App.css'
 import { DropDownList } from './components/DropDownList'
+import { Book } from './components/Book'
 
 class BooksApp extends React.Component {
 
