@@ -1,8 +1,7 @@
 import React from 'react'
 
 class DropDownList extends React.Component {
-  renderDropDownList = () => {
-    const  dropDownDownData  = this.props
+  renderDropDownList = (dropDownDownData) => {
     return (
       <div className="book-shelf-changer">
       <select>
