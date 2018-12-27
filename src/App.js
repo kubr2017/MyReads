@@ -3,6 +3,7 @@ import React from 'react'
 import './App.css'
 import { DropDownList } from './components/DropDownList'
 import { Book } from './components/Book'
+import { Shelf } from './components/Shelf'
 
 //const data = [{urlPath:"http://books.google.com/books/content?id=pD6arNyKyi8C&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE70Rw0CCwNZh0SsYpQTkMbvz23npqWeUoJvVbi_gXla2m2ie_ReMWPl0xoU8Quy9fk0Zhb3szmwe8cTe4k7DAbfQ45FEzr9T7Lk0XhVpEPBvwUAztOBJ6Y0QPZylo4VbB7K5iRSk&source=gbs_api",
   //       title:'The Hobbit',
@@ -146,6 +147,9 @@ class BooksApp extends React.Component {
                     </ol>
                   </div>
                 </div>
+              </div>
+              <div>
+              <Shelf/>
               </div>
             </div>
             <div className="open-search">
