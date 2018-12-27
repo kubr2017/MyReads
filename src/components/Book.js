@@ -8,7 +8,7 @@ class Book extends React.Component {
   // const res = {};
 
   render() {
-    console.log('prop',this.props.data);
+    //console.log('prop',this.props.data);
     return (
       this.props.data.map((item,index) => (
         <div key={index}>
