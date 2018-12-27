@@ -1,6 +1,6 @@
 import React from 'react'
 import { DropDownList } from './DropDownList'
-import { getAll } from '../../src/BooksAPI.js'
+import * as BooksAPI from '../../src/BooksAPI.js'
 
 
 class Book extends React.Component {
@@ -18,7 +18,7 @@ class Book extends React.Component {
         <div className="book-authors">J.R.R. Tolkien</div>
       </div>
       <div>
-      {/*getAll().then(function(res){console.log(res)})*/}
+      {/*BooksAPI.getAll().then(function(res){console.log(res)})*/}
       </div>
       </div>
     )
