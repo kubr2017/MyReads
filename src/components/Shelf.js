@@ -4,6 +4,7 @@ import {DropDownList} from './DropDownList'
 class Shelf extends React.Component {
 
   render(){
+    console.log('shelf comp booksArr:'+this.props.booksArr);
     return(
       <div className="bookshelf">
         <h2 className="bookshelf-title">{this.props.data/*Currently Reading*/}</h2>

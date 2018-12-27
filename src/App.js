@@ -160,7 +160,7 @@ class BooksApp extends React.Component {
                 </div>
               </div>
               <div>
-              <Shelf data={shelfs[0]}/>
+              <Shelf data={shelfs[0]} booksArr={this.state.books}/>
               </div>
             </div>
             <div className="open-search">
