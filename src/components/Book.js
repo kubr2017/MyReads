@@ -18,7 +18,7 @@ class Book extends React.Component {
         <div className="book-authors">J.R.R. Tolkien</div>
       </div>
       <div>
-      {getAll().then(function(res){console.log(res)})}
+      {/*getAll().then(function(res){console.log(res)})*/}
       </div>
       </div>
     )
