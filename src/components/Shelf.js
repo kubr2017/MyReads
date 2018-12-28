@@ -1,10 +1,13 @@
 import React from 'react'
 import {DropDownList} from './DropDownList'
+import {Book} from './Book'
 
 class Shelf extends React.Component {
 
   render(){
-    console.log('shelf comp booksArr:'+this.props.booksArr);
+    console.log('shelf comp booksArr:',this.props.booksArr);
+
+    console.log('imageLinks:',this.props.booksArr.filter(function(item,index){if (index===0) return true}).map((item)=>(item.imageLinks.thumbnail)))
     return(
       <div className="bookshelf">
         <h2 className="bookshelf-title">{this.props.data/*Currently Reading*/}</h2>
@@ -13,7 +16,8 @@ class Shelf extends React.Component {
             <li>
               <div className="book">
                 <div className="book-top">
-                  <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: 'url("http://books.google.com/books/content?id=PGR2AwAAQBAJ&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE73-GnPVEyb7MOCxDzOYF1PTQRuf6nCss9LMNOSWBpxBrz8Pm2_mFtWMMg_Y1dx92HT7cUoQBeSWjs3oEztBVhUeDFQX6-tWlWz1-feexS0mlJPjotcwFqAg6hBYDXuK_bkyHD-y&source=gbs_api")' }}></div>
+                  {/*<div className="book-cover" style={{ width: 128, height: 193, backgroundImage: 'url("http://books.google.com/books/content?id=PGR2AwAAQBAJ&printsebooksAc=frontcover&img=1&zoom=1&imgtk=AFLRE73-GnPVEyb7MOCxDzOYF1PTQRuf6nCss9LMNOSWBpxBrz8Pm2_mFtWMMg_Y1dx92HT7cUoQBeSWjs3oEztBVhUeDFQX6-tWlWz1-feexS0mlJPjotcwFqAg6hBYDXuK_bkyHD-y&source=gbs_api")' }}></div>*/}
+                  {/*<div className="book-cover" style={{ width: 128, height: 193, `backgroundImage: url({this.props.booksArr[0].imageLinks.smallThumbnail})` }}></div>*/}
                   <DropDownList/>
                 </div>
                 <div className="book-title">To Kill a Mockingbird</div>
@@ -30,9 +34,9 @@ class Shelf extends React.Component {
                 <div className="book-authors">Orson Scott Card</div>
               </div>
             </li>
-            {/*<li>
-              <Book data={data}/>
-            </li> */}
+            <li>
+              <Book data={this.props.booksArr[0]}/>
+            </li>
           </ol>
         </div>
       </div>

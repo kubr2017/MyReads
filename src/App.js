@@ -9,9 +9,9 @@ import * as BooksAPI from './BooksAPI'
 const shelfs  = ['Currently Reading','Want to Read','Read']
 
 
-//const data = [{urlPath:"http://books.google.com/books/content?id=pD6arNyKyi8C&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE70Rw0CCwNZh0SsYpQTkMbvz23npqWeUoJvVbi_gXla2m2ie_ReMWPl0xoU8Quy9fk0Zhb3szmwe8cTe4k7DAbfQ45FEzr9T7Lk0XhVpEPBvwUAztOBJ6Y0QPZylo4VbB7K5iRSk&source=gbs_api",
-  //       title:'The Hobbit',
-      //   author:'J.R.R. Tolkien'}]
+const data = [{urlPath:"http://books.google.com/books/content?id=pD6arNyKyi8C&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE70Rw0CCwNZh0SsYpQTkMbvz23npqWeUoJvVbi_gXla2m2ie_ReMWPl0xoU8Quy9fk0Zhb3szmwe8cTe4k7DAbfQ45FEzr9T7Lk0XhVpEPBvwUAztOBJ6Y0QPZylo4VbB7K5iRSk&source=gbs_api",
+         title:'The Hobbit',
+         author:'J.R.R. Tolkien'}]
 
 class BooksApp extends React.Component {
 
@@ -33,7 +33,7 @@ class BooksApp extends React.Component {
   }
 
   render() {
-    console.log(this.state.books);
+    console.log('Begin:',this.state.books);
     return (
       <div className="app">
         {this.state.showSearchPage ? (
@@ -88,9 +88,9 @@ class BooksApp extends React.Component {
                           <div className="book-authors">Orson Scott Card</div>
                         </div>
                       </li>
-                      {/*<li>
-                        <Book data={data}/>
-                      </li> */}
+                      <li>
+                        <Book data={data[0]}/>
+                      </li>
                     </ol>
                   </div>
                 </div>
@@ -160,6 +160,9 @@ class BooksApp extends React.Component {
                 </div>
               </div>
               <div>
+              {
+                (this.state.books.length) ? console.log('booksArr after if:',this.state.books) : console.log('booksArr before if:',this.state.books)
+              }
               <Shelf data={shelfs[0]} booksArr={this.state.books}/>
               </div>
             </div>
