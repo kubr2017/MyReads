@@ -159,11 +159,12 @@ class BooksApp extends React.Component {
                   </div>
                 </div>
               </div>
+
               <div>
-              {
+              {/*
                 (this.state.books.length) ? console.log('booksArr after if:',this.state.books) : console.log('booksArr before if:',this.state.books)
-              }
-              <Shelf data={shelfs[0]} booksArr={this.state.books}/>
+              */}
+              <Shelf booksArr={this.state.books.filter(function (item) {return (item.shelf='currentlyReading')})}/>
               </div>
             </div>
             <div className="open-search">

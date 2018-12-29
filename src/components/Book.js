@@ -15,13 +15,13 @@ class Book extends React.Component {
 
   render() {
     //console.log('prop',this.props.data)
-    {this.props.data ? console.log('map:',this.props.data.title):console.log('zero');}
+    {/*this.props.data ? console.log('map:',this.props.data.title):console.log('zero');*/}
 
     return (
         <div>
         <div className="book">
           <div className="book-top">
-            <div className="book-cover" style={{ width: 128, height: 192, backgroundImage:`url(${this.props.data})`}}></div>
+            <div className="book-cover" style={{ width: 128, height: 192, backgroundImage:`url(${this.props.data.imageLinks.thumbnail})`}}></div>
             <DropDownList/>
           </div>
           <div className="book-title">{this.props.data.title}</div>
