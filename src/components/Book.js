@@ -15,7 +15,7 @@ class Book extends React.Component {
 
   render() {
     //console.log('prop',this.props.data)
-    console.log('map:',this.props.data)
+    {this.props.data ? console.log('map:',this.props.data.title):console.log('zero');}
 
     return (
         <div>
