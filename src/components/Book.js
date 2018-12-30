@@ -14,14 +14,14 @@ class Book extends React.Component {
   // }
 
   render() {
-    //console.log('prop',this.props.data)
+    console.log('prop',this.props.data.imageLinks)
     {/*this.props.data ? console.log('map:',this.props.data.title):console.log('zero');*/}
 
     return (
-        <div>
+        <div key={this.props.data.id}>
         <div className="book">
           <div className="book-top">
-            <div className="book-cover" style={{ width: 128, height: 192, backgroundImage:`url(${this.props.data.imageLinks.thumbnail})`}}></div>
+            <div className="book-cover" style={{ width: 128, height: 192, backgroundImage:`url(${/*"https://www.computerhope.com/jargon/e/error.gif"*/this.props.data.imageLinks})` }}></div>
             <DropDownList/>
           </div>
           <div className="book-title">{this.props.data.title}</div>
