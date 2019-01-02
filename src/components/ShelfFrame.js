@@ -6,8 +6,8 @@ class ShelfFrame extends React.Component {
   render (){
     return (
       <div className="bookshelf">
-        <h2 className="bookshelf-title">Currently Reading</h2>
-
+        <h2 className="bookshelf-title">{this.props.data}</h2>
+          <ShelfInner booksArr = {this.props.booksArr}/>
       </div>
     )
   }

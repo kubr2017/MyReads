@@ -2,7 +2,7 @@ import React from 'react'
 import {DropDownList} from './DropDownList'
 import {Book} from './Book'
 
-class Shelf extends React.Component {
+class ShelfInner extends React.Component {
 
       state = {
         a: []
@@ -26,4 +26,4 @@ class Shelf extends React.Component {
   }
 }
 
-export { Shelf }
+export { ShelfInner }

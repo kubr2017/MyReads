@@ -3,7 +3,7 @@ import React from 'react'
 import './App.css'
 import { DropDownList } from './components/DropDownList'
 import { Book } from './components/Book'
-import { Shelf } from './components/Shelf'
+import { ShelfFrame } from './components/ShelfFrame'
 import * as BooksAPI from './BooksAPI'
 
 const shelfs  = ['Currently Reading','Want to Read','Read']
@@ -163,6 +163,9 @@ class BooksApp extends React.Component {
               {/*<div>
               <Shelf booksArr={this.state.books.filter(function (item) {return (item.shelf='currentlyReading')})}/>
               </div>*/}
+              <div>
+                <ShelfFrame data={shelfs[0]} booksArr={this.state.books.filter(function (item) {return (item.shelf='currentlyReading')})}/>
+              </div>
             </div>
             <div className="open-search">
               <button onClick={() => this.setState({ showSearchPage: true })}>Add a book</button>
