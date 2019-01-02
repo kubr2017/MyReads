@@ -56,9 +56,9 @@ class BooksApp extends React.Component {
             </div>
             <div className="list-books-content">
               <div>
-                <ShelfFrame shelfs = {shelfs} booksArr={this.state.books.filter(function (item) {return item.shelf==='currentlyReading'})}/>
-                <ShelfFrame shelfs = {shelfs} booksArr={this.state.books.filter(function (item) {return item.shelf==='wantToRead'})}/>
-                <ShelfFrame shelfs = {shelfs} booksArr={this.state.books.filter(function (item) {return item.shelf==='read'})}/>
+                <ShelfFrame key = {'currentlyReading'} shelfs = {shelfs} booksArr={this.state.books.filter(function (item) {return item.shelf==='currentlyReading'})}/>
+                <ShelfFrame key = {'wantToRead'} shelfs = {shelfs} booksArr={this.state.books.filter(function (item) {return item.shelf==='wantToRead'})}/>
+                <ShelfFrame key = {'read'} shelfs = {shelfs} booksArr={this.state.books.filter(function (item) {return item.shelf==='read'})}/>
               </div>
             {/*  Tested well working component
               <div>

@@ -18,7 +18,7 @@ class Book extends React.Component {
     //console.log('shelf',this.props.data.shelf ? this.props.data.shelf:null)
 
     return (
-        <div key={this.props.book.id}>
+        <div>
         <div className="book">
           <div className="book-top">
             <div className="book-cover" style={{ width: 128, height: 192, backgroundImage:`url(${(this.props.book.imageLinks && this.props.book.imageLinks.thumbnail) || 'https://www.computerhope.com/jargon/e/error.gif'})` }}></div>
