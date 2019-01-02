@@ -2,6 +2,7 @@ import React from 'react'
 
 class DropDownList extends React.Component {
   changeFunc(e){
+    console.log('value in DropDown:',e.options[e.selected.index].value);
     this.props.moveBook(e.options[e.selected.index].value);
   }
   renderDropDownList = (dropDownDownData) => {
