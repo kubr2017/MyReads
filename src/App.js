@@ -159,13 +159,10 @@ class BooksApp extends React.Component {
                   </div>
                 </div>
               </div>
-
-              {/*<div>
-              <Shelf booksArr={this.state.books.filter(function (item) {return (item.shelf='currentlyReading')})}/>
-              </div>*/}
+            {/*  Tested well working component
               <div>
                 <ShelfFrame data={shelfs[0]} booksArr={this.state.books.filter(function (item) {return (item.shelf='currentlyReading')})}/>
-              </div>
+              </div>*/}
             </div>
             <div className="open-search">
               <button onClick={() => this.setState({ showSearchPage: true })}>Add a book</button>
