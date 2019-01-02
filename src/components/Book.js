@@ -18,15 +18,15 @@ class Book extends React.Component {
     //console.log('shelf',this.props.data.shelf ? this.props.data.shelf:null)
 
     return (
-        <div key={this.props.data.id}>
+        <div key={this.props.book.id}>
         <div className="book">
           <div className="book-top">
-            <div className="book-cover" style={{ width: 128, height: 192, backgroundImage:`url(${(this.props.data.imageLinks && this.props.data.imageLinks.thumbnail) || 'https://www.computerhope.com/jargon/e/error.gif'})` }}></div>
-            <DropDownList/>
+            <div className="book-cover" style={{ width: 128, height: 192, backgroundImage:`url(${(this.props.book.imageLinks && this.props.book.imageLinks.thumbnail) || 'https://www.computerhope.com/jargon/e/error.gif'})` }}></div>
+            <DropDownList shelfs = {this.props.shelfs}/>
           </div>
-          <div className="book-title">{(this.props.data.title && this.props.data.title) || null}</div>
+          <div className="book-title">{(this.props.book.title && this.props.book.title) || null}</div>
           {/*(this.props.data.author) && (this.props.data.author.map((item) => (<div className="book-authors">{item}</div>)))*/}
-          <div className="book-authors">{(this.props.data.author && this.props.data.author[0]) || null}</div>
+          <div className="book-authors">{(this.props.book.author && this.props.book.author[0]) || null}</div>
         </div>
         <div>
         {/*BooksAPI.getAll().then(function(res){console.log(res)})*/}
