@@ -16,6 +16,7 @@ class Book extends React.Component {
     //console.log('imageLinks',(this.props.data.imageLinks&&this.props.data.imageLinks.thumbnail) || null )
     //console.log('title',this.props.data.title? this.props.data.title:null)
     //console.log('authors',this.props.data.authors ? this.props.data.authors[0]:null)
+    console.log('shelf',this.props.data.shelf ? this.props.data.shelf:null)
     {/*this.props.data ? console.log('map:',this.props.data.title):console.log('zero');*/}
 
     return (
