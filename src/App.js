@@ -20,7 +20,7 @@ class BooksApp extends React.Component {
   }
 
    moveBook = (shelfValue,bookId) => {
-    this.state.books.filter((item) =>(item.id===bookId))[0].shelf = shelfValue;
+    (shelfValue&&bookId)&&(this.state.books.filter((item) =>(item.id===bookId))[0].shelf = shelfValue)
   }
 
   componentDidMount() {
