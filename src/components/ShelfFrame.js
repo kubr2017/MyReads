@@ -12,3 +12,5 @@ class ShelfFrame extends React.Component {
     )
   }
 }
+
+export {ShelfFrame}
