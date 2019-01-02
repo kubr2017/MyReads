@@ -1,10 +1,13 @@
 import React from 'react'
 
 class DropDownList extends React.Component {
+  changeFunc(e){
+    this.props.moveBook(e.options[e.selected.index].value);
+  }
   renderDropDownList = (dropDownDownData) => {
     return (
       <div className="book-shelf-changer">
-        <select>
+        <select onchange=changeFunc()>
           <option value="move" disabled>Move to...</option>
           {dropDownDownData.map(item => (<option key = {item} value={item}>{item}</option>))}
         </select>
