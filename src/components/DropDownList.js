@@ -4,9 +4,10 @@ class DropDownList extends React.Component {
   renderDropDownList = (dropDownDownData) => {
     return (
       <div className="book-shelf-changer">
-      <select>
-   {dropDownDownData.map(item => (<option key = {item} value={item}>{item}</option>))}
- </select>
+        <select>
+          <option value="move" disabled>Move to...</option>
+          {dropDownDownData.map(item => (<option key = {item} value={item}>{item}</option>))}
+        </select>
       </div>
     )
 
