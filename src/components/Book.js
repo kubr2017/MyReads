@@ -24,9 +24,9 @@ class Book extends React.Component {
             <div className="book-cover" style={{ width: 128, height: 192, backgroundImage:`url(${(this.props.data.imageLinks && this.props.data.imageLinks.thumbnail) || 'https://www.computerhope.com/jargon/e/error.gif'})` }}></div>
             <DropDownList/>
           </div>
-          <div className="book-title">{this.props.data.title && this.props.data.title || null}</div>
+          <div className="book-title">{(this.props.data.title && this.props.data.title) || null}</div>
           {/*(this.props.data.author) && (this.props.data.author.map((item) => (<div className="book-authors">{item}</div>)))*/}
-          <div className="book-authors">{this.props.data.author && this.props.data.author[0] || null}</div>
+          <div className="book-authors">{(this.props.data.author && this.props.data.author[0]) || null}</div>
         </div>
         <div>
         {/*BooksAPI.getAll().then(function(res){console.log(res)})*/}
