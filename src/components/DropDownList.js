@@ -2,7 +2,7 @@ import React from 'react'
 
 class DropDownList extends React.Component {
   changeFunc(e){
-
+    console.log('option fired',e.currentTarget.value);
     //(options&&console.log('value in DropDown:',e.options[e.selected.index].value))||console.log('options:'+undefined)
     //this.props.moveBook(e.options[e.selected.index].value);
   }
