@@ -2,6 +2,9 @@ import React from 'react'
 import {Book} from './Book'
 
 class ShelfInner extends React.Component {
+  moveBook = (value) =>{
+    console.log('In <ShelfInner/> value:',value);
+  }
 
   render(){
     console.log('shelf comp booksArr:',this.props.booksArr);
@@ -11,7 +14,7 @@ class ShelfInner extends React.Component {
     return(
         <div className="bookshelf-books">
           <ol className="books-grid">
-              {this.props.booksArr.map((item)=>(<li key = {item.id}><Book currentShelf = {this.props.currentShelf} shelfs = {this.props.shelfs} book = {item}/></li>))}
+              {this.props.booksArr.map((item)=>(<li key = {item.id}><Book currentShelf = {this.props.currentShelf} shelfs = {this.props.shelfs} book = {item} moveBook = {this.moveBook}/></li>))}
           </ol>
         </div>
     )
