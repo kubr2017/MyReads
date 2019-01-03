@@ -19,9 +19,9 @@ class BooksApp extends React.Component {
     books: []
   }
 
-   moveBook = (shelfValue,bookId) => {
-    (shelfValue&&bookId)&&(this.state.books.filter((item) =>(item.id===bookId))[0].shelf = shelfValue)
-  }
+  // {/*moveBook = (shelfValue,bookId) => {
+    //(shelfValue&&bookId)&&(this.state.books.filter((item) =>(item.id===bookId))[0].shelf = shelfValue)
+  //}*/}
 
   componentDidMount() {
     BooksAPI.getAll().then((res) =>
@@ -60,9 +60,9 @@ class BooksApp extends React.Component {
             </div>
             <div className="list-books-content">
               <div>
-                <ShelfFrame key = {'currentlyReading'} moveBook = {this.moveBook()} shelfs = {shelfs} booksArr={this.state.books.filter(function (item) {return item.shelf==='currentlyReading'})}/>
-                <ShelfFrame key = {'wantToRead'} moveBook = {this.moveBook()} shelfs = {shelfs} booksArr={this.state.books.filter(function (item) {return item.shelf==='wantToRead'})}/>
-                <ShelfFrame key = {'read'} moveBook = {this.moveBook()} shelfs = {shelfs} booksArr={this.state.books.filter(function (item) {return item.shelf==='read'})}/>
+                <ShelfFrame key = {'currentlyReading'} shelfs = {shelfs} booksArr={this.state.books.filter(function (item) {return item.shelf==='currentlyReading'})}/>
+                <ShelfFrame key = {'wantToRead'} shelfs = {shelfs} booksArr={this.state.books.filter(function (item) {return item.shelf==='wantToRead'})}/>
+                <ShelfFrame key = {'read'} shelfs = {shelfs} booksArr={this.state.books.filter(function (item) {return item.shelf==='read'})}/>
               </div>
             {/*  Tested well working component
               <div>

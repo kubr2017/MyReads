@@ -11,7 +11,7 @@ class ShelfInner extends React.Component {
     return(
         <div className="bookshelf-books">
           <ol className="books-grid">
-              {this.props.booksArr.map((item)=>(<li key = {item.id}><Book moveBook = {this.props.moveBook} shelfs = {this.props.shelfs} book = {item}/></li>))}
+              {this.props.booksArr.map((item)=>(<li key = {item.id}><Book shelfs = {this.props.shelfs} book = {item}/></li>))}
           </ol>
         </div>
     )
