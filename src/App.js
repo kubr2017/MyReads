@@ -38,9 +38,9 @@ class BooksApp extends React.Component {
     bookEl.shelf=obj.shelf;
     console.log('bookEl after change shelf',bookEl);
     let books = this.state.books;
-    books[index] = bookEl[index];
+    books[index] = bookEl;
     console.log('books:',books);
-    //this.setState({books:books});
+    this.setState({books:books});
   }
 
   render() {
