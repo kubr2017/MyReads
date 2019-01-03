@@ -26,7 +26,8 @@ class Book extends React.Component {
           </div>
           <div className="book-title">{(this.props.book.title && this.props.book.title) || null}</div>
           {/*(this.props.data.author) && (this.props.data.author.map((item) => (<div className="book-authors">{item}</div>)))*/}
-          <div className="book-authors">{(this.props.book.author && this.props.book.author[0]) || null}</div>
+          {(this.props.book.authors && this.props.book.authors.map((item) =>(<div key = {item} className="book-authors">{item}</div>)))||null}
+          {/*(this.props.book.author && this.props.book.author.map((item)=>(item))) || null*/}
         </div>
         <div>
         {/*BooksAPI.getAll().then(function(res){console.log(res)})*/}
