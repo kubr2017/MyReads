@@ -28,6 +28,13 @@ class BooksApp extends React.Component {
       this.setState({books:res}) )
   }
 
+  moveBook = (obj) => {
+    console.log('Inside <App/> obj:',obj);
+    let index = this.state.books.findIndex( item => item.id===obj.id);
+    console.log('index:',index);
+    this.setState({books:this.state.books[index].shelf=obj.shelf})
+  }
+
   render() {
     console.log('Begin:',this.state.books);
     return (
@@ -60,9 +67,9 @@ class BooksApp extends React.Component {
             </div>
             <div className="list-books-content">
               <div>
-                <ShelfFrame key = {'currentlyReading'} currentShelf = {shelfs[0]} shelfs = {shelfs} booksArr={this.state.books.filter(function (item) {return item.shelf==='currentlyReading'})}/>
-                <ShelfFrame key = {'wantToRead'} currentShelf = {shelfs[1]} shelfs = {shelfs} booksArr={this.state.books.filter(function (item) {return item.shelf==='wantToRead'})}/>
-                <ShelfFrame key = {'read'} currentShelf = {shelfs[2]} shelfs = {shelfs} booksArr={this.state.books.filter(function (item) {return item.shelf==='read'})}/>
+                <ShelfFrame key = {'currentlyReading'} currentShelf = {shelfs[0]} shelfs = {shelfs} booksArr={this.state.books.filter(function (item) {return item.shelf==='currentlyReading'})}  moveBook = {this.moveBook}/>
+                <ShelfFrame key = {'wantToRead'} currentShelf = {shelfs[1]} shelfs = {shelfs} booksArr={this.state.books.filter(function (item) {return item.shelf==='wantToRead'})}  moveBook = {this.moveBook}/>
+                <ShelfFrame key = {'read'} currentShelf = {shelfs[2]} shelfs = {shelfs} booksArr={this.state.books.filter(function (item) {return item.shelf==='read'})}  moveBook = {this.moveBook}/>
               </div>
             {/*  Tested well working component
               <div>

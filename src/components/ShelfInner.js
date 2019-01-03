@@ -2,8 +2,9 @@ import React from 'react'
 import {Book} from './Book'
 
 class ShelfInner extends React.Component {
-  moveBook = (value) =>{
-    console.log('In <ShelfInner/> value:',value);
+  moveBook = (obj) =>{
+    console.log('In <ShelfInner/> obj:',obj);
+    this.props.moveBook(obj);
   }
 
   render(){
