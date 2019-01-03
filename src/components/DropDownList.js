@@ -8,7 +8,7 @@ class DropDownList extends React.Component {
     setTimeout(()=> { console.log('check this.state after 1 sec:',this.state.value); }, 1000);
     //(options&&console.log('value in DropDown:',e.options[e.selected.index].value))||console.log('options:'+undefined)
     //this.props.moveBook(e.options[e.selected.index].value);
-    this.props.moveBook(this.state.value);
+    this.props.moveBook(e.currentTarget.value);
   }
 
   state = {value: this.props.currentShelf};

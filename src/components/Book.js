@@ -12,7 +12,7 @@ class Book extends React.Component {
 
   moveBook = (value) => {
     console.log('in <Book/> value:',value);
-    this.props.moveBook(value);
+    this.props.moveBook({id:this.props.book.id,shelf:value});
   }
 
   render() {
