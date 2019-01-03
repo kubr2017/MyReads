@@ -22,7 +22,7 @@ class Book extends React.Component {
         <div className="book">
           <div className="book-top">
             <div className="book-cover" style={{ width: 128, height: 192, backgroundImage:`url(${(this.props.book.imageLinks && this.props.book.imageLinks.thumbnail) || 'https://www.computerhope.com/jargon/e/error.gif'})` }}></div>
-            <DropDownList shelfs = {this.props.shelfs}/>
+            <DropDownList currentShelf = {this.props.currentShelf} shelfs = {this.props.shelfs}/>
           </div>
           <div className="book-title">{(this.props.book.title && this.props.book.title) || null}</div>
           {/*(this.props.data.author) && (this.props.data.author.map((item) => (<div className="book-authors">{item}</div>)))*/}

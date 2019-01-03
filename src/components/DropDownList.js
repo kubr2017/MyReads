@@ -9,7 +9,7 @@ class DropDownList extends React.Component {
   renderDropDownList = (dropDownDownData) => {
     return (
       <div className="book-shelf-changer">
-        <select onChange={this.changeFunc}>
+        <select value = {this.props.currentShelf} onChange={this.changeFunc}>
           <option value="move" disabled>Move to...</option>
 
           {dropDownDownData.map((item) => (<option key = {item} value={item} >{item}</option>))}
