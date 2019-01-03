@@ -32,7 +32,14 @@ class BooksApp extends React.Component {
     console.log('Inside <App/> obj:',obj);
     let index = this.state.books.findIndex( item => item.id===obj.id);
     console.log('index:',index);
-    this.setState({books:this.state.books[index].shelf=obj.shelf})
+    let bookEl = this.state.books[index];
+
+    console.log('bookEl:',bookEl);
+    bookEl.shelf=obj.shelf;
+    console.log('bookEl after change shelf',bookEl);
+    let books = this.state.books;
+    books[index] = bookEl[index];
+    this.setState({books:books});
   }
 
   render() {
