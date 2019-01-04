@@ -50,7 +50,28 @@ class BooksApp extends React.Component {
     console.log('books:',books);
     this.setState({books:books});
     console.log('bookShelf after change shelf',this.state.books[index].shelf);
-  }
+
+
+// through Update function :
+/*
+    console.log('Inside <App/> obj:',obj);
+    console.log('index:',obj.id);
+    let bookShelf = obj.shelf;
+    //turn to appropriate way 'Want to read' to 'wantToRead'
+    console.log('before if bookShelf:',bookShelf);
+    if (bookShelf ==='Currently Reading') {
+      bookShelf='currentlyReading';
+    } else if (bookShelf==='Want to Read') {
+      bookShelf='wantToRead';
+    } else {
+      bookShelf='read';
+    }
+    console.log('After If:',bookShelf);
+
+    BooksAPI.update(obj.id,bookShelf).then((res)=>{console.log('promise from Update:',res);
+                                                   console.log('After promise BooksArr:',this.state.books);})
+ */}
+
 
   render() {
     console.log('Begin:',this.state.books);
