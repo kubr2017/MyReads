@@ -32,15 +32,24 @@ class BooksApp extends React.Component {
     console.log('Inside <App/> obj:',obj);
     let index = this.state.books.findIndex( item => item.id===obj.id);
     console.log('index:',index);
-    let bookEl = this.state.books[index];
+    let bookShelf = obj.shelf;
+    //turn to appropriate way 'Want to read' to 'wantToRead'
+    console.log('before if bookShelf:',bookShelf);
+    if (bookShelf ==='Currently Reading') {
+      bookShelf='currentlyReading';
+    } else if (bookShelf==='Want to Read') {
+      bookShelf='wantToRead';
+    } else {
+      bookShelf='read';
+    }
 
-    console.log('bookEl:',bookEl);
-    bookEl.shelf=obj.shelf;
-    console.log('bookEl after change shelf',bookEl);
-    let books = this.state.books;
-    books[index] = bookEl;
+    console.log('old bookShelf:',this.state.books[index].shelf);
+
+    let books = this.state.books.slice();
+    books[index].shelf = bookShelf;
     console.log('books:',books);
     this.setState({books:books});
+    console.log('bookShelf after change shelf',this.state.books[index].shelf);
   }
 
   render() {
