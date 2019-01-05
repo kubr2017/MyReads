@@ -1,5 +1,6 @@
 import React from 'react'
 import {Book} from './Book'
+import PropTypes from 'prop-types'
 
 class ShelfInner extends React.Component {
   moveBook = (obj) =>{
@@ -20,6 +21,12 @@ class ShelfInner extends React.Component {
         </div>
     )
   }
+}
+
+ShelfInner.propTypes = {
+  booksArr: PropTypes.array.isRequired,
+  currentShelf: PropTypes.string.isRequired,
+  shelfs: PropTypes.array.isRequired
 }
 
 export { ShelfInner }

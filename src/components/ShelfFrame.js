@@ -1,5 +1,6 @@
 import React from 'react'
 import {ShelfInner} from './ShelfInner'
+import PropTypes from 'prop-types'
 
 class ShelfFrame extends React.Component {
 
@@ -15,6 +16,13 @@ class ShelfFrame extends React.Component {
       </div>
     )
   }
+}
+
+ShelfFrame.propTypes = {
+  booksArr: PropTypes.array.isRequired,
+  shelfs: PropTypes.array.isRequired,
+  moveBook:PropTypes.func.isRequired,
+  currentShelf:PropTypes.string.isRequired
 }
 
 export {ShelfFrame}
