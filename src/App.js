@@ -89,7 +89,16 @@ class BooksApp extends React.Component {
     let showBooks=[];//array that contains books suppose to show by Search
     if (this.state.query) {
       const match = new RegExp(escapeRegExp(this.state.query),'i');
-      showBooks = this.state.books.filter((item) => match.test(item.title));
+      showBooks = this.state.books.filter(function(item){
+        if (match.test(item.title)) return true;// condition match title of books
+        // Iterate authors ot check matches
+        for (let i = 0; i<item.authors.length;i++) {
+          if (match.test(item.authors[i])) {
+            return true;
+          }
+        }
+        return false;
+      });
     }
 
 
