@@ -4,6 +4,7 @@ import './App.css'
 import { ShelfFrame } from './components/ShelfFrame'
 import * as BooksAPI from './BooksAPI'
 import {Book} from './components/Book'
+import escapeRegExp from 'escape-string-regexp'
 
 const shelfs  = ['Currently Reading','Want to Read','Read']
 
@@ -85,8 +86,16 @@ class BooksApp extends React.Component {
 
   render() {
     console.log('Begin:',this.state.books);
-    let showBooks=[];
-    showBooks = this.state.books.filter((item) => (item.title === this.state.query));
+    let showBooks=[];//array that contains books suppose to show by Search
+    if (this.state.query) {
+      const match = new RegExp(escapeRegExp(this.state.query),'i');
+      showBooks = this.state.books.filter((item) => match.test(item.title));
+    }
+
+
+    //Regular expression
+
+
 
     return (
       <div className="app">
