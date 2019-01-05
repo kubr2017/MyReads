@@ -3,6 +3,7 @@ import React from 'react'
 import './App.css'
 import { ShelfFrame } from './components/ShelfFrame'
 import * as BooksAPI from './BooksAPI'
+import {Book} from './components/Book'
 
 const shelfs  = ['Currently Reading','Want to Read','Read']
 
@@ -84,7 +85,7 @@ class BooksApp extends React.Component {
 
   render() {
     console.log('Begin:',this.state.books);
-    let showBooks;
+    let showBooks=[];
     showBooks = this.state.books.filter((item) => (item.title === this.state.query));
 
     return (
@@ -109,7 +110,8 @@ class BooksApp extends React.Component {
             <div className="search-books-results">
               {(this.state.query) && JSON.stringify(this.state.query)}
               {console.log('showBooks:',showBooks)}
-              <ol className="books-grid"></ol>
+              <ol className="books-grid">{showBooks.map((item)=>(<li key = {item.id}><Book currentShelf = {item.shelf} shelfs = {shelfs} book = {item} moveBook = {this.moveBook}/></li>))}
+              </ol>
             </div>
           </div>
         ) : (
