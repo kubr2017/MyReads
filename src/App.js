@@ -6,6 +6,7 @@ import * as BooksAPI from './BooksAPI'
 
 const shelfs  = ['Currently Reading','Want to Read','Read']
 
+
 class BooksApp extends React.Component {
 
   state = {
@@ -16,7 +17,8 @@ class BooksApp extends React.Component {
      * pages, as well as provide a good URL they can bookmark and share.
      */
     showSearchPage: false,
-    books: []
+    books: [],
+    query: ''
   }
 
   // {/*moveBook = (shelfValue,bookId) => {
@@ -72,9 +74,19 @@ class BooksApp extends React.Component {
                                                    console.log('After promise BooksArr:',this.state.books);})
  */}
 
+   //Function for search page
+
+   updateQuery = (e) => {
+     let value = e.target.value;
+     console.log('e.target.value:',value);
+     this.setState({query:e.target.value.trim()})
+   }
 
   render() {
     console.log('Begin:',this.state.books);
+    let showBooks;
+    showBooks = this.state.books.filter((item) => (item.title === this.state.query));
+
     return (
       <div className="app">
         {this.state.showSearchPage ? (
@@ -90,11 +102,13 @@ class BooksApp extends React.Component {
                   However, remember that the BooksAPI.search method DOES search by title or author. So, don't worry if
                   you don't find a specific author or title. Every search is limited by search terms.
                 */}
-                <input type="text" placeholder="Search by title or author"/>
+                <input type="text" onChange = {this.updateQuery} value = {this.state.query} placeholder="Search by title or author"/>
 
               </div>
             </div>
             <div className="search-books-results">
+              {(this.state.query) && JSON.stringify(this.state.query)}
+              {console.log('showBooks:',showBooks)}
               <ol className="books-grid"></ol>
             </div>
           </div>
