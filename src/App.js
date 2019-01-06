@@ -7,7 +7,10 @@ import {Book} from './components/Book'
 import escapeRegExp from 'escape-string-regexp'
 
 const shelfs  = ['Currently Reading','Want to Read','Read']
-
+const shelfsMap = new Map()
+shelfsMap.set('currentlyReading','Currently Reading')
+shelfsMap.set('wantToRead','Want to Read')
+shelfsMap.set('read','Read')
 
 class BooksApp extends React.Component {
 
@@ -87,6 +90,7 @@ class BooksApp extends React.Component {
   render() {
     console.log('Begin:',this.state.books);
     let showBooks=[];//array that contains books suppose to show by Search
+    let showBooksOnShelf = [];
     if (this.state.query) {
       const match = new RegExp(escapeRegExp(this.state.query),'i');
       showBooks = this.state.books.filter(function(item){
@@ -103,16 +107,16 @@ class BooksApp extends React.Component {
 
     //Shelfs for result of Search
 
-    let mySet = new Set();
+    let shelfsPropertySet = new Set(); //Set to keep values of shelf property
     if (showBooks.length) {
       showBooks.forEach(function(item){
-        mySet.add(item.shelf);
-      }) else{
-        mySet.clear();
+        shelfsPropertySet.add(item.shelf);
+      })} else {
+        shelfsPropertySet.clear();
       }
-    }
 
-    
+
+
 
 
     return (
@@ -137,7 +141,16 @@ class BooksApp extends React.Component {
             <div className="search-books-results">
               {(this.state.query) && JSON.stringify(this.state.query)}
               {console.log('showBooks:',showBooks)}
-              <ol className="books-grid">{showBooks.map((item)=>(<li key = {item.id}><Book currentShelf = {item.shelf} shelfs = {shelfs} book = {item} moveBook = {this.moveBook}/></li>))}
+              {/* shelfsPropertySet.forEach((value) => (console.log('value:',value,' Map:',shelfsMap.get(value))))*/}
+                {shelfsPropertySet.forEach((value) => {
+                  showBooksOnShelf.push(<ShelfFrame key = {value} currentShelf = {shelfsMap.get(value)} shelfs = {shelfs} booksArr={showBooks.filter(function (item) {return item.shelf===value})}  moveBook = {this.moveBook}/>)
+                })
+              }
+              {console.log('showBooksOnShelf:',showBooksOnShelf)}
+              {showBooksOnShelf}
+
+
+              <ol className="books-grid">{/*showBooks.map((item)=>(<li key = {item.id}><Book currentShelf = {item.shelf} shelfs = {shelfs} book = {item} moveBook = {this.moveBook}/></li>))*/}
               </ol>
             </div>
           </div>
@@ -148,10 +161,14 @@ class BooksApp extends React.Component {
             </div>
             <div className="list-books-content">
               <div>
+                {console.log('shelfsMap:',shelfsMap)}
+
                 <ShelfFrame key = {'currentlyReading'} currentShelf = {shelfs[0]} shelfs = {shelfs} booksArr={this.state.books.filter(function (item) {return item.shelf==='currentlyReading'})}  moveBook = {this.moveBook}/>
                 <ShelfFrame key = {'wantToRead'} currentShelf = {shelfs[1]} shelfs = {shelfs} booksArr={this.state.books.filter(function (item) {return item.shelf==='wantToRead'})}  moveBook = {this.moveBook}/>
                 <ShelfFrame key = {'read'} currentShelf = {shelfs[2]} shelfs = {shelfs} booksArr={this.state.books.filter(function (item) {return item.shelf==='read'})}  moveBook = {this.moveBook}/>
-              </div>
+
+
+                </div>
             {/*  Tested well working component
               <div>
                 <ShelfFrame data={shelfs[0]} booksArr={this.state.books.filter(function (item) {return (item.shelf='currentlyReading')})}/>
