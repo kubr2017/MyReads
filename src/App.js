@@ -5,12 +5,17 @@ import { ShelfFrame } from './components/ShelfFrame'
 import * as BooksAPI from './BooksAPI'
 import {Book} from './components/Book'
 import escapeRegExp from 'escape-string-regexp'
+import { Link } from 'react-router-dom'
+
+
+
 
 const shelfs  = ['Currently Reading','Want to Read','Read']
 const shelfsMap = new Map()
 shelfsMap.set('currentlyReading','Currently Reading')
 shelfsMap.set('wantToRead','Want to Read')
 shelfsMap.set('read','Read')
+
 
 class BooksApp extends React.Component {
 
@@ -175,7 +180,7 @@ class BooksApp extends React.Component {
               </div>*/}
             </div>
             <div className="open-search">
-              <button onClick={() => this.setState({ showSearchPage: true })}>Add a book</button>
+              <Link to = '/search' className='add-button'>Add a book</Link>
             </div>
           </div>
         )}
