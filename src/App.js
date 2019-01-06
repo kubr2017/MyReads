@@ -101,6 +101,19 @@ class BooksApp extends React.Component {
       });
     }
 
+    //Shelfs for result of Search
+
+    let mySet = new Set();
+    if (showBooks.length) {
+      showBooks.forEach(function(item){
+        mySet.add(item.shelf);
+      }) else{
+        mySet.clear();
+      }
+    }
+
+    
+
 
     return (
       <div className="app">
