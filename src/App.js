@@ -102,10 +102,6 @@ class BooksApp extends React.Component {
     }
 
 
-    //Regular expression
-
-
-
     return (
       <div className="app">
         {this.state.showSearchPage ? (
